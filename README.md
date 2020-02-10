@@ -19,4 +19,4 @@ Aplikacjia domyślnie uruchamia się na porcie 8080, aby zmienic port nalerzy wp
 * Aby usunąć  produkt należy wysłać żądanie Delete http://localhost:8080/product/.
 
 # Użyte technologie
-Spring Boot, Spring Data, H2 database, Maven
+Spring Boot, Spring Data, Sprig Web,  H2 database, Maven
