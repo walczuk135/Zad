@@ -1,7 +1,7 @@
-package com.service.rest.productservice.db;
+package com.service.rest.productservice.data;
 
 
-import com.service.rest.productservice.TypeProduct;
+import com.service.rest.productservice.api.TypeProduct;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -15,7 +15,7 @@ public class ProductRow {
     private Long id;
     private String name;
     private String description;
-    private TypeProduct type;
+    private String type;
     private BigDecimal price;
     private LocalDate createDate;
     private int count;
@@ -23,7 +23,7 @@ public class ProductRow {
     public ProductRow() {
     }
 
-    public ProductRow(String name, String description, TypeProduct type, BigDecimal price, LocalDate localDate){
+    public ProductRow(String name, String description, String type, BigDecimal price, LocalDate localDate){
         this.name=name;
         this.description=description;
         this.type=type;
@@ -47,11 +47,11 @@ public class ProductRow {
         this.description = description;
     }
 
-    public TypeProduct getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeProduct type) {
+    public void setType(String type) {
         this.type = type;
     }
 

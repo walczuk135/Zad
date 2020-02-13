@@ -1,7 +1,7 @@
-package com.service.rest.productservice.dto;
+package com.service.rest.productservice.api.dto;
 
 
-import com.service.rest.productservice.TypeProduct;
+import com.service.rest.productservice.api.TypeProduct;
 
 import java.math.BigDecimal;
 
@@ -50,7 +50,6 @@ public class ProductDto {
         return type;
     }
 
-    
     public void setType(TypeProduct type) {
         this.type = type;
     }

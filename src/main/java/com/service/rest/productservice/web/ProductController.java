@@ -1,7 +1,7 @@
-package com.service.rest.productservice;
+package com.service.rest.productservice.web;
 
-import com.service.rest.productservice.db.ProductRow;
-import com.service.rest.productservice.dto.ProductDto;
+import com.service.rest.productservice.api.ProductService;
+import com.service.rest.productservice.api.dto.ProductDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

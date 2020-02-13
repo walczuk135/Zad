@@ -1,4 +1,4 @@
-package com.service.rest.productservice.exception;
+package com.service.rest.productservice.web.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

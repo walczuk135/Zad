@@ -1,11 +1,12 @@
-package com.service.rest.productservice;
+package com.service.rest.productservice.api;
 
-import com.service.rest.productservice.db.ProductRow;
-import com.service.rest.productservice.db.ProductRepository;
-import com.service.rest.productservice.dto.ProductDto;
-import com.service.rest.productservice.dto.ProductMapper;
-import com.service.rest.productservice.exception.ProductIdNotFoundException;
-import com.service.rest.productservice.exception.ProductNameNotFoundException;
+import com.service.rest.productservice.api.discount.DiscountService;
+import com.service.rest.productservice.data.ProductRow;
+import com.service.rest.productservice.data.ProductRepository;
+import com.service.rest.productservice.api.dto.ProductDto;
+import com.service.rest.productservice.api.dto.ProductMapper;
+import com.service.rest.productservice.web.exception.ProductIdNotFoundException;
+import com.service.rest.productservice.web.exception.ProductNameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -18,9 +19,11 @@ import java.util.stream.Collectors;
 public class ProductService {
 
     private ProductRepository productRepository;
+    private DiscountService discountService;
 
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository,DiscountService discountService) {
         this.productRepository = productRepository;
+        this.discountService=discountService;
     }
 
     @Transactional
@@ -28,9 +31,14 @@ public class ProductService {
         ProductRow productRow = productRepository
                 .findProductByName(name)
                 .orElseThrow(() -> new ProductNameNotFoundException(name));
+
         productRow.setCount(productRow.getCount() + 1);
 
-        return ProductMapper.productRowToProductDto(productRow);
+        ProductDto productDto=ProductMapper.productRowToProductDto(productRow);
+
+        productDto.setPrice(discountService.calcDiscount(productDto.getPrice(),productDto.getType()));
+
+        return productDto;
     }
 
     @Transactional

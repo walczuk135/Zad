@@ -1,7 +1,7 @@
-package com.service.rest.productservice.dto;
+package com.service.rest.productservice.api.dto;
 
-import com.service.rest.productservice.TypeProduct;
-import com.service.rest.productservice.db.ProductRow;
+import com.service.rest.productservice.api.TypeProduct;
+import com.service.rest.productservice.data.ProductRow;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -13,7 +13,7 @@ public class ProductMapper {
         productRow.setName(productDto.getName());
         productRow.setDescription(productDto.getDescription());
         productRow.setPrice(productDto.getPrice());
-        productRow.setType(productDto.getType());
+        productRow.setType(productDto.getType().type);
         productRow.setCreateDate(LocalDate.now());
         productRow.setCount(productDto.getCount());
         return productRow;
@@ -23,8 +23,8 @@ public class ProductMapper {
         ProductDto productDto=new ProductDto();
         productDto.setName(productRow.getName());
         productDto.setDescription(productRow.getDescription());
-        productDto.setPrice(productRow.getPrice().subtract(new BigDecimal(productRow.getType().discount/100).multiply(productRow.getPrice())).round(new MathContext(4)));
-        productDto.setType(productRow.getType());
+        productDto.setPrice(productRow.getPrice());
+        productDto.setType(TypeProduct.valueOf(productRow.getType()));
         productDto.setCount(productRow.getCount());
         return productDto;
     }

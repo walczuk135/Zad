@@ -1,4 +1,4 @@
-package com.service.rest.productservice.exception;
+package com.service.rest.productservice.web.exception;
 
 public class ProductNameNotFoundException extends RuntimeException {
     public ProductNameNotFoundException(String name) {

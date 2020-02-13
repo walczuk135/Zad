@@ -1,4 +1,4 @@
-package com.service.rest.productservice.exception;
+package com.service.rest.productservice.web.exception;
 
 public class ProductIdNotFoundException extends RuntimeException {
     public ProductIdNotFoundException(Long id) {
