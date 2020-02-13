@@ -3,6 +3,7 @@ package com.service.rest.productservice.api.discount;
 import com.service.rest.productservice.api.TypeProduct;
 import com.service.rest.productservice.api.dto.ProductDto;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -13,7 +14,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-@Component
+@Service
 public class DiscountService {
     private final EnumMap<TypeProduct, DiscountStrategy> discounts;
 
