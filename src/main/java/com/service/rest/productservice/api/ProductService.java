@@ -1,5 +1,6 @@
 package com.service.rest.productservice.api;
 
+import com.service.rest.productservice.api.counter.CounterService;
 import com.service.rest.productservice.api.discount.DiscountService;
 import com.service.rest.productservice.data.ProductRow;
 import com.service.rest.productservice.data.ProductRepository;
@@ -20,10 +21,12 @@ public class ProductService {
 
     private ProductRepository productRepository;
     private DiscountService discountService;
+    private CounterService counterService;
 
-    public ProductService(ProductRepository productRepository,DiscountService discountService) {
+    public ProductService(ProductRepository productRepository,DiscountService discountService,CounterService counterService) {
         this.productRepository = productRepository;
         this.discountService=discountService;
+        this.counterService=counterService;
     }
 
     @Transactional
@@ -32,11 +35,12 @@ public class ProductService {
                 .findProductByName(name)
                 .orElseThrow(() -> new ProductNameNotFoundException(name));
 
-        productRow.setCount(productRow.getCount() + 1);
+        productRow.setCount(counterService.incrementCount(productRow.getCount()));
 
         ProductDto productDto=ProductMapper.productRowToProductDto(productRow);
 
         productDto.setPrice(discountService.calcDiscount(productDto.getPrice(),productDto.getType()));
+
 
         return productDto;
     }
@@ -46,9 +50,17 @@ public class ProductService {
         ProductRow productRow = productRepository
                 .findById(id)
                 .orElseThrow(() -> new ProductIdNotFoundException(id));
-        productRow.setCount(productRow.getCount() + 1);
 
-        return ProductMapper.productRowToProductDto(productRow);
+        productRow.setCount(counterService.incrementCount(productRow.getCount()));
+
+
+        ProductDto productDto=ProductMapper.productRowToProductDto(productRow);
+
+        productDto.setPrice(discountService.calcDiscount(productDto.getPrice(),productDto.getType()));
+
+
+        return productDto;
+
     }
 
     public List<ProductDto> findAll() {

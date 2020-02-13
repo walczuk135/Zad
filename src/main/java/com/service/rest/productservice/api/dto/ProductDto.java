@@ -10,7 +10,7 @@ public class ProductDto {
     private String description;
     private TypeProduct type;
     private BigDecimal price;
-    private int count;
+    private long count;
 
     public ProductDto(String name, String description, TypeProduct type, BigDecimal price) {
         this.name = name;
@@ -19,11 +19,11 @@ public class ProductDto {
         this.price = price;
     }
 
-    public int getCount() {
+    public long getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(long count) {
         this.count = count;
     }
 

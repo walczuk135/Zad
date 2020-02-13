@@ -5,6 +5,7 @@ import com.service.rest.productservice.api.dto.ProductDto;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +38,7 @@ public class DiscountService {
 
     public BigDecimal calcDiscount(BigDecimal price,TypeProduct typeProduct) {
         return getDiscount(typeProduct)
-                .calculateDiscount(price);
+                .calculateDiscount(price).setScale (2, RoundingMode.HALF_EVEN);
     }
 
     public void setDiscount(TypeProduct type,double price){

@@ -18,7 +18,7 @@ public class ProductRow {
     private String type;
     private BigDecimal price;
     private LocalDate createDate;
-    private int count;
+    private long count;
 
     public ProductRow() {
     }
@@ -79,11 +79,11 @@ public class ProductRow {
         this.id = id;
     }
 
-    public int getCount() {
+    public long getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(long count) {
         this.count = count;
     }
 
