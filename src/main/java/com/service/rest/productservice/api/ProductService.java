@@ -58,14 +58,14 @@ public class ProductService {
 
 
 
-    @PostConstruct
-    public void init() {
-        save(new ProductDto("lego", "Lego bricks", TypeProduct.KID, new BigDecimal("20.00")));
-        save(new ProductDto("ball", "recreational ball", TypeProduct.MALE, new BigDecimal("49.99")));
-        save(new ProductDto("lipstick", "Beauty and medicine", TypeProduct.FEMALE, new BigDecimal("34.99")));
-        save(new ProductDto("testosterone", "diet supplement", TypeProduct.MALE, new BigDecimal("150.99")));
-        save(new ProductDto("bag", "accessories", TypeProduct.FEMALE, new BigDecimal("25.99")));
-        save(new ProductDto("AK-47", "Automatic gun", TypeProduct.MALE, new BigDecimal("3000.99")));
-    }
+//    @PostConstruct
+//    public void init() {
+//        save(new ProductDto("lego", "Lego bricks", TypeProduct.KID, new BigDecimal("20.00")));
+//        save(new ProductDto("ball", "recreational ball", TypeProduct.MALE, new BigDecimal("49.99")));
+//        save(new ProductDto("lipstick", "Beauty and medicine", TypeProduct.FEMALE, new BigDecimal("34.99")));
+//        save(new ProductDto("testosterone", "diet supplement", TypeProduct.MALE, new BigDecimal("150.99")));
+//        save(new ProductDto("bag", "accessories", TypeProduct.FEMALE, new BigDecimal("25.99")));
+//        save(new ProductDto("AK-47", "Automatic gun", TypeProduct.MALE, new BigDecimal("3000.99")));
+//    }
 
 }
