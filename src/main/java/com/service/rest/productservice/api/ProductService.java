@@ -7,7 +7,6 @@ import com.service.rest.productservice.data.ProductRepository;
 import com.service.rest.productservice.api.dto.ProductDto;
 import com.service.rest.productservice.api.dto.ProductMapper;
 import com.service.rest.productservice.web.exception.ProductIdNotFoundException;
-import com.service.rest.productservice.web.exception.ProductNameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -29,21 +28,6 @@ public class ProductService {
         this.counterService=counterService;
     }
 
-    @Transactional
-    public ProductDto findProductByName(String name) {
-        ProductRow productRow = productRepository
-                .findProductByName(name)
-                .orElseThrow(() -> new ProductNameNotFoundException(name));
-
-        productRow.setCount(counterService.incrementCount(productRow.getCount()));
-
-        ProductDto productDto=ProductMapper.productRowToProductDto(productRow);
-
-        productDto.setPrice(discountService.calcDiscount(productDto.getPrice(),productDto.getType()));
-
-
-        return productDto;
-    }
 
     @Transactional
     public ProductDto findProductById(Long id) {
@@ -53,14 +37,11 @@ public class ProductService {
 
         productRow.setCount(counterService.incrementCount(productRow.getCount()));
 
-
         ProductDto productDto=ProductMapper.productRowToProductDto(productRow);
 
         productDto.setPrice(discountService.calcDiscount(productDto.getPrice(),productDto.getType()));
 
-
         return productDto;
-
     }
 
     public List<ProductDto> findAll() {
@@ -75,9 +56,7 @@ public class ProductService {
         return productDto;
     }
 
-    public void deleteProduct(String name) {
-        productRepository.deleteByName(name);
-    }
+
 
     @PostConstruct
     public void init() {

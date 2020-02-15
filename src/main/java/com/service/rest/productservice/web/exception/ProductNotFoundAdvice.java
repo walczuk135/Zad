@@ -8,12 +8,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
 public class ProductNotFoundAdvice {
-    @ResponseBody
-    @ExceptionHandler(ProductNameNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String bookNotFoundNameHandler(ProductNameNotFoundException e) {
-        return e.getMessage();
-    }
 
     @ResponseBody
     @ExceptionHandler(ProductIdNotFoundException.class)
