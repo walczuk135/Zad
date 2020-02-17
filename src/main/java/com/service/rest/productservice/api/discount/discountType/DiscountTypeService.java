@@ -15,7 +15,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
-public class DiscountTypeService implements DiscountResolver {
+class DiscountTypeService implements DiscountResolver {
     private final EnumMap<TypeProduct, DiscountStrategyType> discounts;
 
     public DiscountTypeService(List<DiscountStrategyType> discountStrategies) {

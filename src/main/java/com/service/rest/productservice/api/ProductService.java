@@ -12,8 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
-import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Service
 public class ProductService {
@@ -29,14 +28,13 @@ public class ProductService {
 
     }
 
-
     @Transactional
     public ProductDto findProductById(Long id) {
         ProductRow productRow = productRepository
                 .findById(id)
                 .orElseThrow(() -> new ProductIdNotFoundException(id));
 
-        productRow.setCount(counterService.incrementCount(productRow.getCount()));
+        productRow.setCount(counterService.incrementCount(productRow.getCount())); //dirty checking
 
         ProductDto productDto=ProductMapper.productRowToProductDto(productRow);
 
@@ -46,11 +44,6 @@ public class ProductService {
         return productDto;
     }
 
-    public List<ProductDto> findAll() {
-        return productRepository.findAll().stream()
-                .map(ProductMapper::productRowToProductDto)
-                .collect(Collectors.toList());
-    }
 
     @Transactional
     public ProductDto save(ProductDto productDto) {

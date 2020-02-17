@@ -3,8 +3,7 @@ package com.service.rest.productservice.api.dto;
 import com.service.rest.productservice.api.TypeProduct;
 import com.service.rest.productservice.data.ProductRow;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
+
 import java.time.LocalDate;
 
 public class ProductMapper {

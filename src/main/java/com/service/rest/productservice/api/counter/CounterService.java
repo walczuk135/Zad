@@ -1,20 +1,18 @@
 package com.service.rest.productservice.api.counter;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class CounterService {
-    SimpleCounter simpleCounter;
+    CounterInterface simpleCounterInterface;
 
-    public CounterService(SimpleCounter simpleCounter) {
-        this.simpleCounter = simpleCounter;
+    public CounterService(CounterInterface simpleCounterInterface) {
+        this.simpleCounterInterface = simpleCounterInterface;
     }
 
     public long incrementCount(Long number){
-        return simpleCounter.incrementCounter(number);
+        return simpleCounterInterface.incrementCounter(number);
     }
 
-//    public void resetCount(){
-//        simpleCounter.resetCounter();
-//    }
+
 }

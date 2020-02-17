@@ -3,12 +3,14 @@ package com.service.rest.productservice.api.dto;
 
 import com.service.rest.productservice.api.TypeProduct;
 
+import javax.validation.constraints.DecimalMin;
 import java.math.BigDecimal;
 
 public class ProductDto {
     private String name;
     private String description;
     private TypeProduct type;
+    @DecimalMin(value="0.01")
     private BigDecimal price;
     private long count;
 

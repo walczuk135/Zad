@@ -3,8 +3,8 @@ package com.service.rest.productservice.api.counter;
 import org.springframework.stereotype.Component;
 
 @Component
-class SimpleCounter implements Counter {
-    private final long counter;
+class SimpleCounter implements CounterInterface {
+    private long counter;
 
     public SimpleCounter() {
         counter = 1L;
