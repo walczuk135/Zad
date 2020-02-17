@@ -15,12 +15,6 @@ class SimpleCounter implements CounterInterface {
         return counter + number;
     }
 
-
-    @Override
-    public Long decrementCounter(Long number) {
-        return number - counter;
-    }
-
     public Long getCounter() {
         return counter;
     }
