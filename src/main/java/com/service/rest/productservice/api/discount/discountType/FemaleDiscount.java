@@ -1,4 +1,4 @@
-package com.service.rest.productservice.api.discount;
+package com.service.rest.productservice.api.discount.discountType;
 
 import com.service.rest.productservice.api.TypeProduct;
 import org.springframework.stereotype.Component;
@@ -6,17 +6,12 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 @Component
-class FemaleDiscount implements DiscountStrategy {
-    private double discount=0.05;
+class FemaleDiscount implements DiscountStrategyType {
+    private String discount="0.05";
 
     @Override
     public BigDecimal calculateDiscount(BigDecimal price) {
         return price.subtract(price.multiply(new BigDecimal(discount)));
-    }
-
-    @Override
-    public void setDiscount(double discount) {
-        this.discount=discount;
     }
 
     @Override

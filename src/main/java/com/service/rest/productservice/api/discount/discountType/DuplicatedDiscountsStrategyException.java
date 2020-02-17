@@ -1,6 +1,6 @@
-package com.service.rest.productservice.api.discount;
+package com.service.rest.productservice.api.discount.discountType;
 
-public class DuplicatedDiscountsStrategyException extends RuntimeException {
+class DuplicatedDiscountsStrategyException extends RuntimeException {
     public DuplicatedDiscountsStrategyException(Object l, Object r) {
         super("Found duplicated strategies assigned to one discount type value: " + l.getClass() + " " + r.getClass());
     }

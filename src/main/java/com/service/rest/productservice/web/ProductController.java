@@ -15,7 +15,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ProductDto getProductById(@RequestParam(value = "id") Long id){
         return productService.findProductById(id);
     }

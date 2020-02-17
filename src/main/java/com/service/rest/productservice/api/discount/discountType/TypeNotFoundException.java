@@ -1,8 +1,8 @@
-package com.service.rest.productservice.api.discount;
+package com.service.rest.productservice.api.discount.discountType;
 
 import com.service.rest.productservice.api.TypeProduct;
 
-public class TypeNotFoundException extends RuntimeException {
+class TypeNotFoundException extends RuntimeException {
     public TypeNotFoundException(TypeProduct type) {
         super("Discount for: " + type + " has not been found.");
     }
