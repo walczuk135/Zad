@@ -6,11 +6,11 @@ import java.math.BigDecimal;
 
 @Component
 class DiscountGreaterThan2000 implements DiscountStrategyPrice{
-    private String discount="0.05";
+    private final String discount="0.05";
 
     @Override
     public BigDecimal calculateDiscount(BigDecimal price) {
-        return price.compareTo(new BigDecimal("2000")) > 0 ? price.subtract(new BigDecimal(discount).multiply(price)): price;
+        return price.compareTo(new BigDecimal("1999")) > 0 ? price.subtract(new BigDecimal(discount).multiply(price)): price;
     }
 
 

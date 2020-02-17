@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Component
 class FemaleDiscount implements DiscountStrategyType {
-    private String discount="0.05";
+    private final String discount="0.05";
 
     @Override
     public BigDecimal calculateDiscount(BigDecimal price) {
