@@ -12,10 +12,7 @@ Aplikacjia do działania nie potrzebuje zewnetrznego serwera aplikacyjnego (serw
 Aplikacjia domyślnie uruchamia się na porcie 8080, aby zmienic port nalerzy wpisać wartość portu w pliku application.properties.
 
 # Użytkowanie aplikacji
-* Aby wyświetlić produkt po id należy wysłać żądanie GET http://localhost:8080/products/?id={n}. 
-* Aby wyśietlić szystkie produkty należy wysłać żądanie GET http://localhost:8080/products/.
-* Aby storzyć nowy produkt należy wysłać żądanie POST http://localhost:8080/products/.
-* Aby usunąć  produkt należy wysłać żądanie Delete http://localhost:8080/products/{name}.
+* Aby wyświetlić produkt po id należy wysłać żądanie GET http://localhost:8080/products?id={n}. 
 
 # Użyte technologie
 Spring Boot, Spring Data, Sprig Web,  H2 database, Maven
