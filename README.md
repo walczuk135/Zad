@@ -5,9 +5,9 @@ mvn clean install
 w przybadku braku narzędzia maven można skorzystać z wersji wbudowanej w IntelliJ IDEA.
 
 # Startowanie Aplikacji
-Po zakończeniu procesu budowy pojawi się folder target, a w nim plik productRow-service-0.0.1-SNAPSHOT.jar.
+Po zakończeniu procesu budowy pojawi się folder target, a w nim plik product-service-0.0.1-SNAPSHOT.jar.
 Aplikacjie można wystartować poleceniem:
-java -jar productRow-service-0.0.1-SNAPSHOT.jar
+java -jar product-service-0.0.1-SNAPSHOT.jar
 Aplikacjia do działania nie potrzebuje zewnetrznego serwera aplikacyjnego (serwer wbudowany jest w projekt).
 Aplikacjia domyślnie uruchamia się na porcie 8080, aby zmienic port nalerzy wpisać wartość portu w pliku application.properties.
 
