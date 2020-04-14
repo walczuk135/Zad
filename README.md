@@ -39,4 +39,4 @@ Project is: _in progress_ .
 The project was created to practice working with spring framework
 
 ## Contact
-Created by [walczuk135](walczuk135@gmail.com) - feel free to contact me!
+Created by [walczuk135@gmail.com](walczuk135@gmail.com) - feel free to contact me!
