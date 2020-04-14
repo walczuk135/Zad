@@ -25,44 +25,20 @@ A simple rest service that counts the number of endpoint entries.
 ## Setup
 mvn clean install
 in the absence of maven tools, you can use the version built into IntelliJ IDEA.
-
-## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+After the construction process is completed, the target folder will appear with the file product-service-0.0.1-SNAPSHOT.jar.
+The application can be started by:
+java -jar product-service-0.0.1-SNAPSHOT.jar
+The application does not need an external application server to operate (the server is built into the project).
+By default, the application runs on port 8080, to change the port, enter the port value in the application.properties file.
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* To display the product after id you must send a GET request http://localhost:8080/products?id={n}. 
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Project is: _in progress_ .
 
 ## Inspiration
 Add here credits. Project inspired by..., based on...
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
-
-
-
-
-# Zadnie rekrutacyjne
-# Budowanie programu
-Proces budowy rozpoczynamy wpisując komende w folderze głównym:
-mvn clean install
-w przybadku braku narzędzia maven można skorzystać z wersji wbudowanej w IntelliJ IDEA.
-
-# Startowanie Aplikacji
-Po zakończeniu procesu budowy pojawi się folder target, a w nim plik product-service-0.0.1-SNAPSHOT.jar.
-Aplikacjie można wystartować poleceniem:
-java -jar product-service-0.0.1-SNAPSHOT.jar
-Aplikacjia do działania nie potrzebuje zewnetrznego serwera aplikacyjnego (serwer wbudowany jest w projekt).
-Aplikacjia domyślnie uruchamia się na porcie 8080, aby zmienic port nalerzy wpisać wartość portu w pliku application.properties.
-
-# Użytkowanie aplikacji
-* Aby wyświetlić produkt po id należy wysłać żądanie GET http://localhost:8080/products?id={n}. 
-
-# Użyte technologie
-Spring Boot, Spring Data, Sprig Web,  H2 database, Maven
+Created by [walczuk135](walczuk135@gmail.com) - feel free to contact me!
