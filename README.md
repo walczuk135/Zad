@@ -3,10 +3,8 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
 * [Contact](#contact)
@@ -38,7 +36,7 @@ To-do list:
 Project is: _in progress_ .
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+The project was created to practice working with spring framework
 
 ## Contact
 Created by [walczuk135](walczuk135@gmail.com) - feel free to contact me!
